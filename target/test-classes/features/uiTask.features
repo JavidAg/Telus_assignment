@@ -1,0 +1,11 @@
+Feature: This feature file will verify the search functionality on the Google
+
+  @TaskUi
+  Scenario Outline: User looking for term on Google search page
+    Given User should navigate to the "homePage"
+    When User should search for "<term>" using the search input
+    Then User should verify that the first result contains the "<text>"
+
+    Examples:
+      | term         | text                |
+      | Serenity BDD | serenity-bdd.info   |

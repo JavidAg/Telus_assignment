@@ -1,0 +1,16 @@
+Feature: API endpoint
+
+
+
+  @TaskApi
+  Scenario Outline: Verification of API endpoint
+    Given User should send GET request to the endPoint
+    Then User should verify that format of the response body is JSON
+    And User should filters the response as "<key>" and "<value>" format
+    Then User should verify that the status code is <code>
+    And User should verify that the object count is <count>
+    Then User should verify that "<API name>" contains in the response body and category "<value>"
+
+    Examples:
+      | key      | value          | code | count  | API name |
+      | Category | Science & Math | 200  | 33     | NASA     |
